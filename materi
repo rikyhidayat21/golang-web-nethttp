@@ -1,0 +1,11 @@
+Bagian 1. Server
+
+
+
+Bagian 2. Handler
+- Server hanya bertugas sebagai web server, sedangkan untuk menerima HTTP Request yang masuk ke Server, kita butuh yang namanya handler
+- Handler di Go-Lang di representasikan dalam INTERFACE (bukan struct), dimana dalam kontraknya terdapat sebuah function bernama ServerHTTP() yang digunakan sebagai function yang akan di eksekusi ketika menerima HTTP Request
+
+HandlerFunc
+- Salah satu implementasi dari interface Handler adalah HandlerFunc
+- Kita bisa menggunakan HandlerFunc untuk membuat function handler HTTP
