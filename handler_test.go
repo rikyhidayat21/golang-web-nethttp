@@ -6,6 +6,8 @@ import (
 	"testing"
 )
 
+var baseURL = "localhost:4000"
+
 func TestHandler(t *testing.T) {
 
 	var handler http.HandlerFunc = func(writer http.ResponseWriter, request *http.Request) {
@@ -55,6 +57,20 @@ func TestServeMux(t *testing.T) {
 
 	// inisialisasi server
 	server := http.Server{Addr: "localhost:4000", Handler: mux}
+
+	err := server.ListenAndServe()
+	if err != nil {
+		panic(err)
+	}
+}
+
+func TestRequest(t *testing.T) {
+	var handler http.HandlerFunc = func(writer http.ResponseWriter, request *http.Request) {
+		fmt.Fprintln(writer, request.Method)
+		fmt.Fprintln(writer, request.RequestURI)
+	}
+
+	server := http.Server{Addr: baseURL, Handler: handler}
 
 	err := server.ListenAndServe()
 	if err != nil {
