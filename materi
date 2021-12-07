@@ -85,3 +85,13 @@ Request Header
 
 Response Header
 - Sedangkan jika kita ingin menambahkan header kepada response, kita bisa menggunakan function ResponseWriter.Header()
+
+Bagian 8. Form Post
+- Saat kita belajar HTML, kita tahu bahwa saat kita membuat form, kita bisa submit datanya dengan method GET atau POST
+- Jika menggunakan GET, maka hasilnya semua data di form akan menjadi Query Parameter
+- Sedangkan jika menggunakan POST, maka semua data di form akan dikirim via Body HTTP Request
+- Di Golang untuk mengambil data Form Post sangatlah mudah
+
+Request.PostForm
+- Semua data Form Post yang dikirim dari client, secara otomatis akan disimpan dalam attribute Request.PostForm
+- Namun sebelum kita bisa mengambil data di attribute PostForm, kita WAJIB memanggil method Request.ParseForm() terlebih dahulu, method ini digunakan untuk melakukan parsing data body apakah bisa diparsing menjadi form data atau tidak, jika tidak bisa di parsing, maka akan menyebabkan error
