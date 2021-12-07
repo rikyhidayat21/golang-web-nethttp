@@ -69,3 +69,19 @@ Multiple Value Query Parameter
 - Artinya, dalam satu key query parameter, kita bisa memasukkan beberapa value
 - Caranya kita bisa menambahkan query parameter dengan nama yang sama, namun value berbeda, misal:
 - name=Riky&name=Hidayat
+
+Bagian 7. Header
+- Selain Query Parameter, dalam HTTP, ada juga yang bernama Header
+- Header adalah informasi tambahan yang biasa dikirim dari client ke server atau sebaliknya
+- Jadi dalam Header, tidak hanya ada pada HTTP Request, pada HTTP Response pun kita bisa menambahkan informasi Header
+- Saat kita menggunakan browser, maka biasanya Header akan otomatis ditambahkan oleh browser, seperti informasi browser, jenis tipe content yang dikirim dan diterima oleh browser, danlainlain.
+
+Request Header
+- Untuk menangkap request header yang dikirim dari client, kita bisa mengambilnya di Request.Header
+- Header mirip seperti Query Parameter, isinya adalah map[string][]string -> Slice
+- Berbeda dengan Query Parameter yang case sensitive, secara spesifikasi, Header key tidaklah case sensitive
+
+[Checkpoint Ngoding dulu]
+
+Response Header
+- Sedangkan jika kita ingin menambahkan header kepada response, kita bisa menggunakan function ResponseWriter.Header()
