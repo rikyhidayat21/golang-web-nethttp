@@ -28,3 +28,21 @@ Bagian 4. Request
 - Request adalah STRUCT yang merepresentasikan HTTP request yang dikirim oleh Web Browser
 - Semua informasi request yang dikirim bisa kita dapatkan di Request
 - Seperti URL, HTTP Method, HTTP Header, HTTP Body, danlainlain.
+
+Bagian 5. HTTP Test
+- Golang sudah menyediakan package khusus untuk membuat unit test terhadap fitur Web yang kita buat
+- Semuanya ada didalam package net/http/httptest
+- Dengan menggunakan package ini, kita bisa melakukan testing handler web di Go-Lang tanpa harus menjalankan aplikasi Webnya
+- Kita bisa langsung fokus terhadap handler functionnya yang ingin kita test
+
+STEP 1
+
+httptest.NewRequest()
+- NewRequest(method, url, body) merupakan function yang digunakan untuk membuat http.Request
+- Kita bisa menentukan method, url, dan body yang akan kita kiri sebagai simulasi unit test
+- Selain itu, kita juga bisa menambahkan informasi tambahan lainnya pada request yang ingin kita kirim, seperti header, cookie, danlainlain
+
+STEP 2
+httptest.NewRecorder()
+- httptest.NewRecorder() merupakan function yang digunakan untuk membuat ResponseRecorder
+- ResponseRecorder merupakan struct bantuan untuk merekam HTTP Response dari hasil testing yang kita lakukan
