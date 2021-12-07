@@ -95,3 +95,13 @@ Bagian 8. Form Post
 Request.PostForm
 - Semua data Form Post yang dikirim dari client, secara otomatis akan disimpan dalam attribute Request.PostForm
 - Namun sebelum kita bisa mengambil data di attribute PostForm, kita WAJIB memanggil method Request.ParseForm() terlebih dahulu, method ini digunakan untuk melakukan parsing data body apakah bisa diparsing menjadi form data atau tidak, jika tidak bisa di parsing, maka akan menyebabkan error
+
+Bagian 9. Response Code
+- Dalam HTTP, terdapat yang namanya response code
+- Response code merupakan representasi kode response
+- Dari response code ini kita bisa melihat apakah sebuah request yang kita kirim itu sukses di proses oleh server atau gagal
+
+Mengubah Response Code
+- Secara default 200 OK
+- Jika kita ingin mengubahnya, kita bisa menggunakan function ResponseWriter.WriteHeader(int)
+- Semua data status juga sudah disediakan oleh Golang
