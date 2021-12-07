@@ -46,3 +46,26 @@ STEP 2
 httptest.NewRecorder()
 - httptest.NewRecorder() merupakan function yang digunakan untuk membuat ResponseRecorder
 - ResponseRecorder merupakan struct bantuan untuk merekam HTTP Response dari hasil testing yang kita lakukan
+
+Bagian 6. Query Parameter
+- Query Parametr adalah salah satu fitur yang biasa digunakan ketika membuat web
+- Query Parameter biasanya digunakan untuk mengirim data dari client ke server
+- Query Parameter ditempatkan di URL
+- Untuk menambahkan Query Parameter, kita bisa menggunakan ?nama=value pada URLnya
+
+url.URL
+- Dalam parameter Request, terdapat attribute URL yang berisi data url.URL
+- Dari data URL ini, kita bisa mengambil data query parameter yang dikirim dari client dengan menggunakan method Query() yang akan mengembalikan map
+
+[Checkpoint -> Cek kodingan dulu sampai QueryParams]
+
+Multiple Query
+- Dalam spesifikasi URL, kita bisa menambahkan lebih dari satu Query parameter
+- Ini cocok sekali jika kita ingin mengirim banyak data ke server, cukup tambahkan query parameter lainnya
+- Untuk menambahkan query parameter, kita bisa gunakan tanda "&" lalu diikuti dengan query parameter berikutnya
+
+Multiple Value Query Parameter
+- Sebenarnya URL melakukan Parsing query parameter dan menyimpannya dalam map[string][]string
+- Artinya, dalam satu key query parameter, kita bisa memasukkan beberapa value
+- Caranya kita bisa menambahkan query parameter dengan nama yang sama, namun value berbeda, misal:
+- name=Riky&name=Hidayat
