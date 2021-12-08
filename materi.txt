@@ -121,3 +121,24 @@ Cookie
 Membuat Cookie
 - Cookie merupakan data yang dibuat diserver, dan sengaja agar disimpan di web browser
 - Untuk membuat cookie di server, kita bisa menggunakan function http.SetCookie()
+
+Bagian 11. FileServer
+- Go-Lang memiliki sebuah fitur yang bernama FileServer
+- Dengan ini, kita bisa membuat Handler di Go-Lang Web yang digunakan sebagai static file server
+- Dengan menggunakan FileServer, kita tidak perlu manual me-load file lagi
+- FileServer adalah Handler, jadi bisa kita tambahkan ke dalam http.Server atau http.ServeMux
+
+[Setelah membuat kode, munculnya 404 Not Found], Kenapa?
+- Jika kita coba jalankan, saat kita membuka misal /static/index.js, maka akan dapat error 404 Not Found
+- Kenapa ini terjadi?
+- Hal ini dikarenakan FileServer akan membaca URL, lalu mencari file berdasarkan URLnya, jadi jika kita membuat /static/index.js, maka FileServer akan mencari ke file /resources/static/index.js
+- Hal ini menyebabkan 404 Not Found karena memang filenya tidak bisa ditemukan
+- Oleh karena itu, kita bisa menggunakan function http.StripPrefix() untuk menghapus prefix di URL
+
+Go-Lang Embed ##
+- Di Golang 1.16 terdapat fitur baru yang bernama Golang embed
+- Dalam Golang embed kita dapat embed file ke dalam binary distribution file, hal ini mempermudah sehingga kita tidak perlu meng-copy static file lagi
+- Golang embed juga memiliki fitur yang bernama embed.FS, fitur ini bisa diintegrasikan dengan FileServer
+
+[404 not found lagi nih], kenapa?
+- Jika kita ingin langsung mengakses file index.js tanpa menggunakan resources, kita bisa menggunakan function fs.Sub() untuk mendapatkan subdirectory
