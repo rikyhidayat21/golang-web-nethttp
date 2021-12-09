@@ -154,3 +154,37 @@ Golang Embed
 - Parameter function http.ServeFile hanya berisi string file name, sehingga tidak bis amenggunakan Golang embed
 - Namun bukan berarti kita tidak bisa menggunakan Golang embed, karena jika untuk melakukan load file, kita hanya butuh menggunakan package fmt dan ResponseWriter saja
 - Golang embed itu bisa meload file kedalam string
+
+Bagian 13. Web Dinamis
+- Sampai saat ini kita hanya membahas tentang membuat response menggunakan String dan juga static file
+- Pada kenyataannya, saat kita membuat we, kita pasti akan membuat halaman yang dinamis, bisa berubah-ubah sesuai dengan data yang diakses oleh user
+- Di Golang terdapat fitur HTML Template, yaitu fitur template yang bisa kita gunakan untuk membuat HTML yang dinamis
+
+HTML Template
+- Fitur HTML template terdapat di package html/template
+- Sebelum menggunakan HTML template, kita perlu terlebih dahulu membuat templatenya
+- Template bisa berupa file atau string
+- Bagian dinamis pada HTML Template, adalah bagian yang menggunakan tanda {{ }}
+
+Membuat Template
+- Saat membuat template dengan string, kita perlu memberi tahu nama templatenya
+- Dan untuk membuat text template, cukup buat text html, dan untuk konten yang dinamis, kita bisa gunakan tanda {{.}}, contoh:
+<html><body>{{.}}</body></html>
+
+Template Dari File
+- Selain membuat template dari string, kita juga bisa membuat template langsung dari file
+- Hal ini mempermudah kita, karena bisa langsung membuat file html
+- Saat membuat template menggunakan file, secara otomatis nama file akan menjadi nama templatenya, misal jika kita punya file simple.html, maka nama templatenya adalah simple.html
+
+[Next Chapter]
+
+Template Directory
+- Kadang biasanya kita jarang sekali menyebutkan file template satu persatu
+- Alangkah baiknya untuk template kita simpan di satu Directory
+- Golang template mendukung proses load template dari Directory
+- Hal ini memudahkan kita, sehingga tidak perlu menyebutkan nama filenya satu per satu
+
+[Next Chapter]
+Template dari Golang Embed
+- Sejak Golang 1.16, karena sudah ada Golang embed, jadi direkomendasikan menggunakan Golang embed untuk menyimpan data template
+- Menggunakan golang embed menjadikan kita tidak perlu ikut mengcopy template file lagi, karena sudah otomatis di embed id dalam distribution file
