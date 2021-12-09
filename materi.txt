@@ -142,3 +142,15 @@ Go-Lang Embed ##
 
 [404 not found lagi nih], kenapa?
 - Jika kita ingin langsung mengakses file index.js tanpa menggunakan resources, kita bisa menggunakan function fs.Sub() untuk mendapatkan subdirectory
+
+Bagian 12. ServeFile
+- Kadang ada kasus misal kita hanya ingin menggunakan static file sesuai dengan yang kita inginkan
+- Hal ini bisa dilakukan menggunakan function http.ServeFile()
+- Dengan menggunakan function ini, kita bisa menentukan file mana yang ingin kita tulis ke http response
+
+[Check kodingan dulu]
+
+Golang Embed
+- Parameter function http.ServeFile hanya berisi string file name, sehingga tidak bis amenggunakan Golang embed
+- Namun bukan berarti kita tidak bisa menggunakan Golang embed, karena jika untuk melakukan load file, kita hanya butuh menggunakan package fmt dan ResponseWriter saja
+- Golang embed itu bisa meload file kedalam string
