@@ -194,3 +194,23 @@ Bagian 14. Template Data
 - Hal ini bisa dilakukan dengan data struct atau map
 - Namum perlu dilakukan perubahan didalam text templatenya, kita perlu memberitahu Field atau Key mana yang akan kita gunakan untuk mengisi data dinamis di template
 - Kita bisa menyebutkan dengan cara seperti ini {{.NamaField}}
+
+Bagian 15. Template Action
+
+Bagian 16. Template Layout
+
+Bagian 17. Template function
+
+Bagian 18. Template Caching
+
+Bagian 19. XSS Cross Site Scripting
+
+Bagian 20. Redirect
+
+Bagian 21. Upload File
+
+Bagian 22. Download File
+
+Bagian 23. Middleware
+
+Bagian 24. Routing Library
