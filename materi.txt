@@ -212,5 +212,21 @@ Bagian 21. Upload File
 Bagian 22. Download File
 
 Bagian 23. Middleware
+- Dalam pembuatan web, ada konsep yang bernama middleware atau filter atau interceptor
+- Middleware adalah sebuah fitur dimana kita menambahkan kode sebelum dan setelah sebuah handler di eksekusi
+
+Middleware di Golang Web
+- Sayangnya, di golang web tidak ada middleware
+- Namun karena struktur handler yang baik menggunakan interface, kita bisa membuat middleware sendiri menggunakan handler
+
+Step membuat Middleware:
+  1. Buat struct
+  2. Buat func
+
+[Next Chapter]
+Error Handler
+- Kadang middleware juga biasa digunakan untuk melakukan error handler
+- Hal ini sehingga jika terjadi panic di Handler, kita bisa melakukan recover di middleware, dan mengubah panic tersebut menjadi error response
+- Dengan ini, kita bisa menjaga aplikasi kita tidak berhenti berjalan
 
 Bagian 24. Routing Library
