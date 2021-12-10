@@ -230,3 +230,7 @@ Error Handler
 - Dengan ini, kita bisa menjaga aplikasi kita tidak berhenti berjalan
 
 Bagian 24. Routing Library
+- Walaupun di golang sudah menyediakan ServeMux sebagai handler yang bisa menghandle beberapa endpoint atau istilahnya adalah Routing
+- Tapi kebanyakan programmer Golang biasanya akan menggunakan library untuk melakukan Routing
+- Hal ini dikarenakan ServeMux tidak memiliki advanced fitur seperti path variable, auto binding parameter dan middleware
+- Banyak alternatif lain yang bisa kita gunakan untuk library routing selain ServeMux
