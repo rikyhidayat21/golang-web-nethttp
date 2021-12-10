@@ -234,3 +234,8 @@ Bagian 24. Routing Library
 - Tapi kebanyakan programmer Golang biasanya akan menggunakan library untuk melakukan Routing
 - Hal ini dikarenakan ServeMux tidak memiliki advanced fitur seperti path variable, auto binding parameter dan middleware
 - Banyak alternatif lain yang bisa kita gunakan untuk library routing selain ServeMux
+
+[Materi Selanjutnya]
+- Golang RESTful API
+- Golang Deployment
+- Golang Docker
